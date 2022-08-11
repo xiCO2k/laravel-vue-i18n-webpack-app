@@ -1,19 +1,8 @@
 <script setup>
-import { Head, Link } from '@inertiajs/inertia-vue3';
-import { trans } from 'laravel-vue-i18n';
-
-defineProps({
-    canLogin: Boolean,
-    canRegister: Boolean,
-    laravelVersion: String,
-    phpVersion: String,
-});
-
-const test = trans('auth.failed')
+import { loadLanguageAsync } from 'laravel-vue-i18n';
 </script>
 
 <template>
-        {{ $t('auth.failed') }}
-        {{ $t('auth.password') }}
-        {{ test }}
+        {{ $t('Welcome!') }} <br><br>
+        <button @click="loadLanguageAsync('pt')">Change Locale to PT</button>
 </template>
